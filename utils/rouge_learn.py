@@ -16,11 +16,11 @@ reference = "the cat was under the bed" # 人工生成的参考摘要
 # rouge-1: 6/6
 # rouge-2: (the cat) (cat was) (was under) (under the) (the bed) 这5个在hypothesis中出现了4个,所以为4/5
 # rouge-3: (the cat was) (cat was under) (was under the) (under the bed) 2/4
-# rouge-l: LCS(longest common subsequence)(最长公共子序列而不是最长公共子串) R = \frac{LCS(X, Y)}{m}, P = \frac{LCS(X, Y)}{n}
+# rouge-l: LCS(longest common subsequence)(最长公共子序列而不是最长公共子串) R = \frac{LCS(X, Y)}{model}, P = \frac{LCS(X, Y)}{n}
 # 其中m为reference(Y)的长度, n为hypothesis(X)的长度(所含词的个数) 3 / 6, 不过要注意weight_factor的存在(加权最长公共子序列)
 
 
-# 输出的'p'代表precision, 'r'代表recall(即我们关心的), 'f'代表f1-score
+# 输出的'params'代表precision, 'r'代表recall(即我们关心的), 'f'代表f1-score
 
 scores = evaluator.get_scores(hypothesis=hypothesis.lower(), references=reference.lower())
 for k, v in scores.items():

@@ -1,0 +1,129 @@
+ｙ y
+ｖ v
+ｕ u
+ｔ t
+ｓ s
+ｐ p
+ｏ o
+ｎ n
+ｍ m
+ｌ l
+ｉ i
+ｈ h
+ｇ g
+ｅ e
+ｄ d
+ｃ c
+ａ a
+Ｕ u
+Ｔ t
+Ｓ s
+Ｒ r
+Ｐ p
+Ｎ n
+Ｍ m
+Ｌ l
+Ｋ k
+Ｉ i
+Ｈ h
+Ｅ e
+Ｄ d
+Ｃ c
+Ｂ b
+Ａ a
+： :
+７ 7
+， ,
+） )
+（ (
+！ !
+」 ]
+「 [
+。 .
+、 ,
++ plus
+= equal
+÷ divided by
+≡ constant equal
+≤ less than or equal to
+≥ greater or equal to
+≠ not equal to
+≈ approximately equal
+∼ ~
+∞ infinity
+√ right
+− -
+∑ sum
+⇾ right
+⇩ down
+↠ double right
+↟ double up
+↓ down
+→ right
+↑ up
+¾ 3 divided by 4
+½ 1 divided by 2
+¼ 1 divided by 4
+⅞ 7 diveded by 8
+⅝ 5 divided by 8
+⅜ 3 divided by 8
+⅛ 1 divided by 8
+⅔ 2 divided by 3
+⅓ 1 divided by 3
+℃ degree celsius
+$ dollar
+€ euro
+₈ 8
+₆ 6
+₄ 4
+₃ 3
+₂ 2
+⁶ 6
+⁰ 0
+⁉ !?
+‼ !!
+› >
+‹ <
+″ \'
+′ \'
+‰ %0
+… ...
+‥ ..
+‟ \"
+„ ,
+” \"
+“ \"
+‚ ,
+’ \'
+‘ \'
+― -
+— -
+– -
+‒ -
+‑ -
+‐ -
+φ phi
+μ mu
+λ lamda
+θ theta
+δ delta
+β beta
+α alpha
+Ω omega
+Σ sum
+; ,
+˝ \"
+˜ ~
+ː :
+ˌ ,
+ˈ \'
+ˆ ^
+ʿ \'
+ʾ \'
+ʽ \'
+ʼ \'
+ʻ \'
+ǃ !
+ǀ |
+¸ ,
+¥ yuan
