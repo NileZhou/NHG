@@ -1,5 +1,5 @@
 import json
-from .my_rouge import Myrouge
+from utils.my_rouge import Myrouge
 
 
 def create_summaries(origin_data, max_sent_num=4):
@@ -64,7 +64,7 @@ def create_summaries(origin_data, max_sent_num=4):
 
 
 
-def create(origin_file_path='../train_3k.txt', max_summa_len=4, max_sent_len=50):
+def create(origin_file_path, max_summa_len=4, max_sent_len=50):
     """
     :param origin_file_path: 训练数据集(content->title)
     :param max_summa_len: 最多抽取多少句话成为摘要
@@ -74,6 +74,7 @@ def create(origin_file_path='../train_3k.txt', max_summa_len=4, max_sent_len=50)
     my_rouge = Myrouge()
 
     data = [] # (json{"summary":xxx, "title":title})
+    # cnt = 0
 
     with open(origin_file_path, 'r', encoding='utf-8') as f:
         for _, line in enumerate(f.readlines()): # 对于每一条训练数据
@@ -81,7 +82,7 @@ def create(origin_file_path='../train_3k.txt', max_summa_len=4, max_sent_len=50)
             tmp = json.loads(line)
             content = tmp['content'].strip()
             title = tmp['title'].strip()
-            seqs = [seq.strip() for seq in content.split('\n') if len(seq) > 4] # 至少一句话得有4个字母吧
+            seqs = [seq.strip() for seq in content.split('\n') if len(seq) > 2] # 至少一句话得有3个字母吧
             for i, seq in enumerate(seqs):
                 words = seq.strip().split()
                 if len(words) > max_sent_len:
@@ -120,30 +121,17 @@ def create(origin_file_path='../train_3k.txt', max_summa_len=4, max_sent_len=50)
             res = json.dumps({'summary': summary, 'title': title}, ensure_ascii=False)
             data.append(res)
 
-            if _ + 1 % 1000 == 0:
-                print(_ + 1, "dealed")
+            # print(cnt, "dealed")
+            # cnt += 1
 
     data_len = len(data)
 
-    with open('../summ_t_{}.txt'.format(data_len), 'w', encoding='utf-8') as f:
+    with open('sum2tit_{}.txt'.format(data_len), 'w', encoding='utf-8') as f:
         f.writelines('\n'.join(data))
 
 
 if __name__ == "__main__":
-    create('/media/nile/study/softwares/baidu_netdisk/download/bytecup2018/train_clean.txt')
-
-    # test & statics
-    # import pandas as pd
-    # lens_data = []
-    # with open("/media/nile/study/softwares/baidu_netdisk/download/bytecup2018/summ_t_83242.txt", 'r', encoding='utf-8') as f:
-    #     for line in f.readlines():
-    #         tmp = json.loads(line)
-    #         summary = tmp['summary']
-    #         lens_data.append(len(summary.split())) # 统计词数
-    #         title = tmp['summary']
-    # print('test success')
-    # df = pd.DataFrame({'lens': lens_data})
-    # print(df.describe())
+    create('/home/nile/Downloads/cont2tit.txt')
 
 
 

@@ -1,4 +1,6 @@
 import re
+import json
+import re
 
 
 class TextCleaner:
@@ -91,11 +93,47 @@ class TextCleaner:
             if len(sent): res.append(sent)
         return '\n'.join(res)
 
-    def clean_text(self, text):
-        # text即多个句子
-        res = []
-        for sent in text.split('\n'):
-            if sent in ('\n', ' '): continue
-            sent = self.clean_sentence(sent)
-            if len(sent): res.append(sent)
-        return '\n'.join(res)
+
+if __name__ == '__main__':
+    cleaner = TextCleaner()
+    print('开始清理cnn_dm_txt中的train.txt')
+    lines = []
+    with open('cnn_dm_txt/train.txt', 'r', encoding='utf-8') as f:
+        for i, line in enumerate(f.readlines()):
+            tmp = json.loads(line)
+            content = tmp['content']
+            summary = tmp['summary']
+            content = cleaner.clean_text(content)
+            if not len(content): continue
+            summary = cleaner.clean_text(summary)
+            if not len(summary): continue
+            tmp = json.dumps({'content': content, 'summary': summary})
+            lines.append(tmp)
+            if (i + 1) % 1000 == 0:
+                print('{} lines have beed dealed'.format(i + 1))
+    print('cnn_dm_txt/train.txt共余{}行'.format(len(lines)))
+    print('开始清理cnn_dm_txt/val.txt中的val.txt')
+    with open('cnn_dm_txt/val.txt', 'r', encoding='utf-8') as f:
+        for i, line in enumerate(f.readlines()):
+            tmp = json.loads(line)
+            content = tmp['content']
+            summary = tmp['summary']
+            content = cleaner.clean_text(content)
+            if not len(content): continue
+            summary = cleaner.clean_text(summary)
+            if not len(summary): continue
+            tmp = json.dumps({'content': content, 'summary': summary})
+            lines.append(tmp)
+            if (i + 1) % 1000 == 0:
+                print('{} lines have beed dealed'.format(i + 1))
+    print('现在一共有{}行待写入'.format(len(lines)))
+    with open('cnn_dm_txt/content2summary.txt', 'w', encoding='utf-8') as f:
+        f.writelines('\n'.join(lines))
+    print('写入完毕')
+    print('开始写入规范长度数据(content 词数: 100 - 800, summary 词数: 5 - 60)')
+    with open('cnn_dm_txt/cont2sum.txt', 'w', encoding='utf-8') as f:
+        f.writelines('\n'.join([line for line in lines if 100 <= len(json.loads(line)['content'].split()) <= 800 and
+                                5 <= len(json.loads(line)['summary'].split()) <= 60]))
+    print('写入成功')
+
+
