@@ -1,5 +1,7 @@
 import rouge
 
+# we use the rouge package: https://github.com/Diego999/py-rouge
+
 
 class Myrouge:
     """

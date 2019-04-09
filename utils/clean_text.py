@@ -90,12 +90,3 @@ class TextCleaner:
             sent = self.clean_sentence(sent, output)
             if len(sent): res.append(sent)
         return '\n'.join(res)
-
-    def clean_text(self, text):
-        # text即多个句子
-        res = []
-        for sent in text.split('\n'):
-            if sent in ('\n', ' '): continue
-            sent = self.clean_sentence(sent)
-            if len(sent): res.append(sent)
-        return '\n'.join(res)
