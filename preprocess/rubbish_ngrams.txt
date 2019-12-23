@@ -1,0 +1,1 @@
+'(ap)', '(afp)', '(wjz)', '(cbs sf)', '(dpa)', '(reuters)', '(cnn)', '(bbc)', '(ansa)', '(spain)', '(cbs)', '(xinhua)', '(cbsla)', '(wcco)', '- la times', '- the new york times', '- breitbart', '- early team-news', '- food news', '- sources', '- report', '- live', '(photos)', '(video)', '(audio)', '(fb)', '(opinion)', '(read details)', '(md)'

@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-93931468-2"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+
+        gtag('config', 'UA-93931468-2');
+    </script>
+    <!-- Hotjar Tracking Code for http://esummarizer.com -->
+    <script>
+        (function (h, o, t, j, a, r) {
+            h.hj = h.hj || function () {
+                (h.hj.q = h.hj.q || []).push(arguments)
+            };
+            h._hjSettings = {hjid: 932249, hjsv: 6};
+            a = o.getElementsByTagName('head')[0];
+            r = o.createElement('script');
+            r.async = 1;
+            r.src = t + h._hjSettings.hjid + j + h._hjSettings.hjsv;
+            a.appendChild(r);
+        })(window, document, 'https://static.hotjar.com/c/hotjar-', '.js?sv=');
+    </script>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+
+    <title></title>
+
+    <link rel="stylesheet" href="../static/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../static/fontawesome/css/fontawesome.min.css">
+<!--    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet"-->
+<!--          type="text/css">-->
+<!--    <link rel="stylesheet" href="/css/anno.css">-->
+<!--    &lt;!&ndash;[if lt IE 9]>-->
+<!--    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>-->
+<!--    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>-->
+<!--    <![endif]&ndash;&gt;-->
+<!--    &lt;!&ndash; <link rel="stylesheet" type="text/css" href="/css/trix.css">-->
+<!--     <script type="text/javascript" src="/js/trix.js"></script> &ndash;&gt;-->
+
+
+    <style>
+
+        @import url(http://fonts.googleapis.com/css?family=Montserrat:400,700);
+
+        body {
+            -webkit-font-smoothing: antialiased;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        #textarea, #summary {
+            color: #444;
+            text-shadow: 0 0 1px transparent;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 400;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+        }
+
+
+        .navbar-static-top {
+            z-index: 10000;
+        }
+
+        .navbar-default .navbar-nav {
+            /* font-weight: bold; */
+            background-color: #f2f2f2;
+
+        }
+
+        .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:focus, .navbar-default .navbar-nav > .active > a:hover {
+            color: #ffffff;
+            background-color: #4c9fd8;
+        }
+
+        .top-menu {
+            cursor: pointer;
+        }
+
+        .navbar {
+            border-bottom: 1px solid #eee;
+            padding-bottom: 0px;
+            padding-left: 15px;
+            background-color: #f2f2f2;
+        }
+
+        .navbar-default .navbar-nav > li > a {
+            color: #85919a;
+        }
+
+        .navbar-default .navbar-nav > li > a:hover {
+            color: #404040;
+        }
+
+        .brand {
+            font-size: 18px;
+            font-weight: bold;
+            margin-right: 120px;
+        }
+
+        .navbar-default .navbar-brand {
+            color: #4c4c4c;
+        }
+
+        small {
+            color: #777;
+        }
+
+        .btn-default .badge {
+            color: #989696;
+            background-color: #fff;
+            border: 1px solid #d0d0d0;
+        }
+
+        textarea {
+            box-sizing: border-box;
+            resize: none;
+        }
+
+        #textarea {
+            color: #333;
+            width: 100%;
+            font-size: 14px;
+            border: 1px solid #ddd;
+            box-shadow: none;
+            -webkit-box-shadow: none;
+            margin-bottom: 20px;
+        }
+
+        #trialexpiredpanel {
+            border-bottom: 2px solid #ddd;
+            height: 280px;
+            display: none;
+            text-align: center;
+            background-color: #4c9fd8;
+            padding-top: 50px;
+            color: white;
+            font-size: 1.5em;
+        }
+
+        #brandimg {
+            display: inline;
+            margin-right: 6px;
+            width: 22px;
+            height: 22px;
+        }
+
+        h4 {
+            font-weight: 800;
+            color: #222;
+        }
+
+        label {
+            cursor: pointer;
+        }
+    </style>
+
+
+</head>
+<body>
+
+
+<!-- Static navbar -->
+<!-- <div id="console" class="alert alert-info" role="alert" style="position:absolute;display: block; bottom:0px;left:0px;width:100%;display:none;z-index:100000;"></div> -->
+
+<!-- Static navbar -->
+<nav class="navbar navbar-default navbar-static-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+                    aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand brand" href="/"><img id="brandimg" src="/img/esummarizer32.png">esummarizer</a>
+
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav top-menu navbar-right">
+                <!-- <li id="btn-editor" ><a>
+                   Write</a></li>
+                <li id="btn-style-scan" class="active"><a>
+                   Edit</a></li> -->
+
+
+                <!--Start of Zendesk Chat Script-->
+                <script type="text/javascript">
+                    window.$zopim || (function (d, s) {
+                        var z = $zopim = function (c) {
+                            z._.push(c)
+                        }, $ = z.s =
+                            d.createElement(s), e = d.getElementsByTagName(s)[0];
+                        z.set = function (o) {
+                            z.set._.push(o)
+                        };
+                        z._ = [];
+                        z.set._ = [];
+                        $.async = !0;
+                        $.setAttribute("charset", "utf-8");
+                        $.src = "https://v2.zopim.com/?5qXhXFCCjG5KWp4QE7Uq4EdhFFU4ROtm";
+                        z.t = +new Date;
+                        $.type = "text/javascript";
+                        e.parentNode.insertBefore($, e)
+                    })(document, "script");
+                </script>
+                <!--End of Zendesk Chat Script-->
+                <li><a href="/#pricing"><span class="label label-warning">GO UNLIMITED - GET 20% OFF using code FREEHOURS</span></a>
+                </li>
+                <!-- <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">TRIAL <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <li><a href="https://gumroad.com/library/" target="_blank">Get Unlimited access</a></li>
+                </ul> -->
+            </ul>
+        </div><!--/.nav-collapse -->
+    </div>
+</nav>
+
+
+<div id="trialexpiredpanel">
+    <!-- you can put content here -->
+    <p style="font-size: 26px;font-weight: bold;">esummarizer is free for the occasional user.</p>
+    <p>Keep enjoying esummarizer, read less, do more.</p>
+    <p>
+        <script src="https://gumroad.com/js/gumroad.js"></script>
+        <a class="gumroad-button" href="https://gum.co/vslx?wanted=true" target="_blank">Go Unlimited for $29/month</a>
+    </p>
+    <!-- <p><a class="btn btn-lg btn-success" href="/main/edit" role="button"><strong>Go Unlimited</strong> for $79/month</a></p> -->
+    <p style="color:#d7e4ef;">No contract. Cancel anytime.</p>
+</div>
+
+<section>
+    <div class="container" style="margin-top:40px;">
+
+        <div class="row" style="margin-bottom:40px;">
+
+
+            <div class="col-lg-6 col-md-6 " id="inputpad">
+                <form class="form-inline" id="inputform" name="inputform">
+                      <textarea class="form-control" id="textarea" name="text" rows="20" data-autoresize>Here is a sample text, taken from the news:
+
+A television station employee was shot dead on Friday in the northwestern city of Peshawar as violent crowds filled the streets of several cities on a day of government-sanctioned protests against an anti-Islam film made in the United States.
+The unrest came as governments and Western institutions in many parts of the Muslim world braced for protests after Friday Prayer   an occasion often associated with demonstrations as worshipers leave mosques. In Tunisia, the authorities invoked emergency powers to outlaw all demonstrations, fearing an outpouring of anti-Western protest inspired both by the American-made film and by cartoons depicting the Prophet Muhammad in a French satirical weekly.
+
+American diplomatic posts in India, Indonesia and elsewhere closed for the day. In Bangladesh, several thousand activists from Islamic organizations took over roads in the center of the capital, Dhaka after prayers. They chanted "death to the United States and death to the French" and set on fire a symbolic coffin for President Obama that was draped with the American flag, as well as an effigy of Mr. Obama. They also burned the American and French flags. The protesters threatened to seize the American Embassy on Saturday, but a police order banned any further demonstrations. Separate protests took place outside of Dhaka as well.
+
+European countries took steps to forestall protests among their own Muslim minorities and against their missions abroad. France had already announced the closure on Friday of embassies and other institutions in 20 countries while, in Paris, some Muslim leaders urged their followers to heed a government ban on weekend demonstrations protesting against denigration of the prophet.
+
+Interior Minister Manuel Valls said officials throughout the country had orders to prevent all protests and crack down if the ban was challenged. "There will be strictly no exceptions. Demonstrations will be banned and broken up," Mr. Valls said.
+
+The German Interior Ministry said it was postponing a poster campaign aimed at countering radical Islam to avoid fueling protests among the country's four million Muslims, The Associated Press reported.
+
+In Pakistan, the scene of the most turbulent unrest, ARY News said that a driver, Muhammad Amir, was shot three times by the police as he drove through an area where stick-wielding protesters were burning a movie theater owned by a prominent politician.
+
+The station repeatedly broadcast graphic footage of hospital staff giving emergency treatment to Mr. Amir, apparently shortly before he died. Other Pakistani journalists condemned the footage as insensitive and irresponsible.
+
+Businesses closed and streets emptied across the country as the government declared a national holiday, the "Day of Love for the Prophet Muhammad," to encourage peaceful protests against the controversial film that has ignited protest across the Muslim world for more than a week.
+
+"An attack on the holy prophet is an attack on the core belief of 1.5 billion Muslims. Therefore, this is something that is unacceptable," said Prime Minister Raja Pervez Ashraf in an address to a religious conference Friday morning in Islamabad.
+
+Mr. Ashraf called on the United Nations and international community to formulate a law outlawing hate speech across the world. "Blasphemy of the kind witnessed in this case is nothing short of hate speech, equal to the worst kind of anti-Semitism or other kind of bigotry," he said.
+
+But the scenes of chaos in some parts of the country as the day progressed suggested that the government had failed to control public anger on the issue.
+
+In Peshawar, where the television employee was killed, protesters attacked and burned two movie theaters, breaking through the windows with sticks and setting fire to posters that featured images of female movie stars.
+
+Television footage showed the police firing in the air to disperse the crowd, and a hospital official said that at least 15 people, including three police officers, were injured.
+
+In Islamabad, where thousands of protesters flooded toward the heavily guarded diplomatic enclave, Express News reported that the police ran out of rubber bullets because of heavy firing.
+
+A television reporter said that when protesters in nearby Rawalpindi ran out of material to burn, they broke into several tire shops along a major road to steal fresh supplies.
+
+The government cut off cellphone coverage in major cities, while the authorities in Islamabad sealed all exits to the city after Friday Prayer, state radio reported. Some Pakistanis were relying on e-mail and social media sites, like Twitter, to communicate.
+
+Expressions of weary anger over the violence were common. "We are not a nation. We are a mob," said Nadeem F. Paracha, a cultural commentator with Dawn newspaper, on Twitter.
+
+Large shipping containers blocked roads through the center of several cities. Western diplomatic missions were closed for the day.
+
+The State Department spent $70,000 on Urdu-language advertisements that were broadcast on several television channels, dissociating the American government from the inflammatory film.
+
+The Ministry of Foreign Affairs announced it had summoned the American charge d'affaires, Richard Hoagland, asking him to have the anti-Islam film removed from YouTube, which has been entirely blocked in Pakistan for the past several days.
+
+Alan Cowell contributed reporting from Paris and Julfikar Ali Manik from Dhaka, Bangladesh.
+</textarea>
+                    <div class="form-group" style="width:100%;">
+                        <label for="exampleInputName2">Summarize in </label>
+                        <input type="text" class="form-control" id="nbsentences" name="nbsentences" placeholder="10"
+                               value="10" style="width:36px;padding:5px;display:inline;">
+                        <label for="exampleInputName2">sentences </label>
+                        <button type="submit" id="btn-summarize" class="btn btn-success btn-lg pull-right">Summarize
+                        </button>
+                    </div>
+                </form>
+            </div>
+            <div class="col-lg-6 col-md-6" id="detailedresults" style="display:none;">
+
+                <div class="side-panel">
+
+                    <h4>Summary
+                        <!-- <small><span data-toggle="tooltip" data-placement="bottom" title="Use short sentences to improve readability." class="fa fa-info-circle">
+                        </span></small> -->
+                    </h4>
+
+                    <div style="font-size:14px;margin-bottom:20px;" id="summary"></div>
+                    <button class="btn btn-default" type="button" id="btnSave">
+                        Save
+                    </button>
+
+                </div>
+            </div>
+
+
+        </div>
+
+    </div>
+    </div>
+</section>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<!-- <script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script> -->
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
+<!-- <script type="text/javascript" src="/js/anno.js"></script> -->
+<script type="text/javascript" src="/js/jquery.scrollintoview.min.js"></script>
+<script type="text/javascript" src="/js/anno.js"></script>
+
+
+<script>
+
+    $(document).ready(function () {
+
+
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip();
+        })
+
+
+        $('#btnSave').click(function () {
+            if ('Blob' in window) {
+                var fileName = prompt('Please enter file name to save', 'Untitled.txt');
+                if (fileName) {
+                    var textToWrite = $('#summary').text();
+                    var textFileAsBlob = new Blob([textToWrite], {type: 'text/plain'});
+
+                    if ('msSaveOrOpenBlob' in navigator) {
+                        navigator.msSaveOrOpenBlob(textFileAsBlob, fileName);
+                    } else {
+                        var downloadLink = document.createElement('a');
+                        downloadLink.download = fileName;
+                        downloadLink.innerHTML = 'Download File';
+
+                        if ('webkitURL' in window) {
+                            // Chrome allows the link to be clicked without actually adding it to the DOM.
+                            downloadLink.href = window.webkitURL.createObjectURL(textFileAsBlob);
+                        } else {
+                            // Firefox requires the link to be added to the DOM before it can be clicked.
+                            downloadLink.href = window.URL.createObjectURL(textFileAsBlob);
+                            downloadLink.click(function () {
+                                document.body.removeChild(event.target);
+                            });
+
+                            downloadLink.style.display = 'none';
+                            document.body.appendChild(downloadLink);
+                        }
+                        downloadLink.click();
+                    }
+                }
+            } else {
+                alert('Could not save. Try a different browser.');
+            }
+        });
+
+        var actionCount = 0;
+        var is_logged_in = 0;
+
+
+        var request;
+
+        $('#inputform').bind('submit', function (e) {
+            console.log($(this).serialize());
+            // Prevent default posting of form - put here to work in case of errors
+            event.preventDefault();
+
+            // Abort any pending request
+            if (request) {
+                request.abort();
+            }
+            // setup some local variables
+            var $form = $(this);
+
+            // Let'res select and cache all the fields
+            var $inputs = $form.find("input, select, button, textarea");
+
+            // Serialize the data in the form
+            var serializedData = $form.serialize();
+            $inputs.prop("disabled", true);
+
+            actionCount++;
+
+            if ((actionCount > 5) && (!is_logged_in)) {
+                $("#trialexpiredpanel").show();
+                $(".navbar").hide();
+                $(".textoverlay").hide("slow");
+                $("#detailedresults").hide("slow");
+                $(".top-menu").hide();
+                $.ajax({
+                    type: "GET",
+                    url: "/main/expire",
+                    cache: false,
+                    dataType: "xml",
+                    success: function (xml) {
+                    }
+                });
+            } else {
+
+                $("#detailedresults").hide();
+
+                request = $.ajax({
+                    url: "/main/getsummary",
+                    type: "post",
+                    data: serializedData
+                });
+
+                // Callback handler that will be called on success
+                request.done(function (response, textStatus, jqXHR) {
+                    // Log a message to the console
+                    console.log("Hooray, it worked!");
+                    $("#summary").html(response);
+                    $("#detailedresults").show();
+                });
+
+                // Callback handler that will be called on failure
+                request.fail(function (jqXHR, textStatus, errorThrown) {
+                    // Log the error to the console
+                    console.error(
+                        "The following error occurred: " +
+                        textStatus, errorThrown
+                    );
+                });
+
+                // Callback handler that will be called regardless
+                // if the request failed or succeeded
+                request.always(function () {
+                    // Reenable the inputs
+                    $inputs.prop("disabled", false);
+                });
+
+            }
+        });
+
+
+        var annoTour = new Anno([
+            {
+                target: '.brand',
+                content: 'Welcome to <strong>esummarizer</strong>,<br> the best kept secret of productive people.',
+                osition: 'bottom'
+            },
+            {
+                target: '#textarea',
+                content: "Simply paste or type your text in this box. Then hit the Summarize button. <br><br>Enjoy!",
+                position: 'bottom'
+            }
+        ])
+
+        var cookie = getCookie("firstvisitesumm");
+
+        if (cookie == null || cookie == "") {
+            setCookie("firstvisitesumm", "1", 10 * 365 * 24 * 60 * 60);
+            if (screen.width <= 768) {
+                // On mobile..
+            } else {
+                annoTour.show();
+            }
+        }
+
+
+        function strip(html) {
+            var tmp = document.createElement("DIV");
+            tmp.innerHTML = html;
+            return tmp.textContent || tmp.innerText || "";
+        }
+
+    });
+
+
+    //set the cookie when they first hit the site
+    function setCookie(c_name, value, exdays) {
+        var exdate = new Date();
+        exdate.setDate(exdate.getDate() + exdays);
+        var c_value = escape(value) + ((exdays == null) ? "" : "; expires=" + exdate.toUTCString());
+        document.cookie = c_name + "=" + c_value;
+    }
+
+    //check for the cookie when user first arrives, if cookie doesn't exist call the intro.
+    function getCookie(c_name) {
+        var c_value = document.cookie;
+        var c_start = c_value.indexOf(" " + c_name + "=");
+        if (c_start == -1) {
+            c_start = c_value.indexOf(c_name + "=");
+        }
+        if (c_start == -1) {
+            c_value = null;
+        } else {
+            c_start = c_value.indexOf("=", c_start) + 1;
+            var c_end = c_value.indexOf(";", c_start);
+            if (c_end == -1) {
+                c_end = c_value.length;
+            }
+            c_value = unescape(c_value.substring(c_start, c_end));
+        }
+        return c_value;
+    }
+
+    //
+    // function PopIt() { return "Your text will be lost. Are you sure you would like to exit?"; }
+    //  function UnPopIt()  { /* nothing to return */ }
+    //
+    //  $(document).ready(function() {
+    //   window.onbeforeunload = PopIt;
+    // $("a").click(function(){ window.onbeforeunload = UnPopIt; });
+    //  });
+</script>
+
+
+</body>
+</html>

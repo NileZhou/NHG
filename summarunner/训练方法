@@ -1,0 +1,4 @@
+# train
+python main.py -device 0 -batch_size 32 -model RNN_RNN -seed 1 -save_dir checkpoints/XXX.pt
+# test
+python main.py -device 0 -batch_size 2 -test -load_dir checkpoints/XXX.pt

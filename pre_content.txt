@@ -1,0 +1,37 @@
+    content = """North Korean leader Kim Jong Un told Russian President Vladimir Putin that he believes the United States acted in "bad faith" at the Hanoi summit, North Korean state media reported.
+    The report in North Korea's state-run KCNA news was released on the final day of Kim's visit to the far-eastern Russian city of Vladivostok. Kim and Putin met there for the first time Thursday, spending about three and a half hours together. The North Korean leader left Vladivostok Friday afternoon aboard his armored government train.
+    KCNA reported that "Kim Jong Un said that the situation on the Korean Peninsula and the region is now at a standstill, and has reached a critical point where it may return to its original state, as the US took a unilateral attitude in bad faith at the recent second DPRK-US summit talks," using the acronym for North Korea's formal name, the Democratic People's Republic of Korea.
+    KCNA also said Kim told his Russian hosts that "peace and security on the Korean Peninsula will entirely depend on the US' future attitude, and the DPRK will guard itself for every possible situation."
+    US President Donald Trump's second meeting with Kim in Hanoi in February ended earlier than expected and without a deal. Trump and US Secretary of State Mike Pompeo said the two sides could not agree on the amount of sanctions relief to exchange for concrete steps by North Korea to eliminate its nuclear weapons program.
+    While Trump said both sides left things on good terms, North Korean officials have accused the US of sabotaging the talks.
+    Diplomats from Pyongyang have used similar language to Kim's in describing US demands at the Hanoi summit.
+    North Korean First Vice Foreign Minister Choe Son Hui told reporters in March that the country has "no intention to yield to the US demands (put forward at the Hanoi summit) in any form, nor are we willing to engage in negotiations of this kind."""
+
+
+    content = """WhatsApp has revealed a vulnerability in its system that could have allowed hackers access to its users' phones, with a London-based human rights lawyer possibly among the targets.
+The encrypted messaging service, owned by Facebook (FB), said Monday that it had discovered and fixed the vulnerability the attackers had sought to exploit. The hackers could implant malicious code on a victim's phone by placing a voice call to the victim on WhatsApp.
+"The attack has all the hallmarks of a private company reportedly that works with governments to deliver spyware that takes over the functions of mobile phone operating systems," a WhatsApp spokesperson said in a statement.
+While WhatsApp did not name the private company, a source familiar with the investigation into the attack said that company is NSO Group, an Israeli cyber company that has developed a powerful piece of malware designed to spy on its victims.
+In a statement provided to CNN on Monday, NSO said, "Under no circumstances would NSO be involved in the operating or identifying of targets of its technology, which is solely operated by intelligence and law enforcement agencies."
+NSO said its technology was licensed to government agencies "for the sole purpose of fighting crime and terror," adding that those agencies determine how the technology is used without any involvement from the company.
+The Financial Times first reported details of the vulnerability."""
+
+    content_chinese = """4月18日，中国气象局与海南省政府在海口签署共同推进气象为海南自由贸易试验区和中国特色自由贸易港建设服务合作协议。海南省委副书记、省长沈晓明，中国气象局党组书记、局长刘雅鸣出席会议并讲话。
+    根据协议，双方将以“智慧气象”建设为抓手，以气象防灾减灾与服务保障体系建设为中心，聚焦海洋气象、旅游气象、生态文明气象服务等重点，谋划推进中国南海气象预警工程、生态环境与旅游气象保障工程、“互联网+智慧气象”服务工程等项目建设，全面提升海南气象保障服务能力。
+　　沈晓明感谢中国气象局长期以来对海南的支持。他说，海南灾害性天气发生频率高、海洋气象重要性日益凸显，气象保障至关重要。海南省委、省政府将切实落实合作协议，抓好重点工程项目建设，推进气象现代化建设，提升气象服务保障海南经济社会发展能力。他建议双方在提高预测预报精准度和创新气象服务产品、服务旅游和健康产业发展、开展国际气象合作等方面加强合作。
+　　刘雅鸣指出，省部合作优化了海南气象事业发展环境。中国气象局将落实党中央关于支持海南自由贸易试验区建设的重大决策，加强省部合作，开启全面建设海南现代化气象强省的新征程。她希望双方抓紧联合编制气象服务海南自由贸易试验区和中国特色自由贸易港发展规划，加快实施“十三五”规划，逐步建立与自贸试验区和中国特色自贸港相适应的气象现代化体系。中国气象局将在科技支撑、资金保障、人才培养和队伍建设等方面强化支持，推动省部合作落到实处。
+　　在琼期间，刘雅鸣检查了海南汛期气象服务工作。她强调，要深刻认识今年汛期气象服务面临的新形势、新要求，强化对台风、暴雨等重大灾害性天气的综合研判和精细化预报预警服务，做好防雷安全监管、人工影响天气等领域精细化管理，全力做好汛期气象服务各项工作。
+　　刘雅鸣还深入三沙市气象局、珊瑚岛气象站、定安县气象局等调研，看望慰问一线干部职工以及驻岛部队官兵。她向坚守在艰苦海疆的基层气象工作者表示敬意，并勉励大家继续奋发向上、拼搏创新，发扬优良传统和作风，作出新的更大贡献。她要求海南省气象部门加强规划引领，不断提升南海气象业务能力；全力做好南海气象监测预报预警工作，为经济社会发展特别是海南自贸区（港）建设做好服务；加强三沙各岛礁气象工作，深入分析不同岛礁的观测条件，完善南海气象观测系统，做好各项气象服务。"""
+
+    content_chinese = """4月4日，中国气象局党组书记、局长刘雅鸣主持召开党组会，进一步学习贯彻习近平总书记对四川省凉山彝族自治州木里县森林火灾作出的重要指示精神，对做好当前防汛抗旱和森林草原防火气象服务工作进行再部署、再落实。
+　　会议指出，今年我国汛期天气气候形势复杂，近期森林火灾和安全生产事故多发，对气象服务提出更高要求、更大挑战，在服务实践中，一些重点难点问题也亟需聚力破解。各级气象部门要认真学习贯彻习近平总书记近期关于防灾减灾救灾工作重要指示精神，按照党中央、国务院的部署要求，进一步提高政治站位，坚持底线思维，增强忧患意识，强化责任担当，采取有效举措强弱项、补短板，提升气象服务的质量和水平。
+　　针对下一步气象服务工作，刘雅鸣要求：
+　　一要深入排查整治风险隐患。落实汛前检查部署，扎实做好关键节点和薄弱环节的检查排查，按照“一省一单”要求整改到位。
+　　二要不断完善部门联动和气象服务协调机制。加强部门内外协调沟通，构建衔接有序、联动高效的工作体系，进一步形成服务合力。
+　　三要持续提高业务服务能力。努力提高预报预测准确率、精细化和延长期，增强服务产品的针对性和前瞻性，更好地满足国家防灾减灾各项需求。
+　　四要高度重视宣传科普工作。及时发布权威信息，积极回应社会关切，大力普及防灾减灾知识，营造全社会合力减灾的良好舆论氛围。
+　　中国气象局党组班子成员出席会议。"""
+
+5月6日，广州超大城市综合气象观测试验2019年增强观测期启动会召开。来自中国气象局综合观测司、中国气象局气象探测中心、广东省气象局、上海市气象局、广州市科技局、广州市气象局等单位领导和专家共100余人参加启动会。
+按照中国气象局部署，广东省气象局将开展为期三年的超大城市综合气象观测试验，致力于解决大城市临近预报和环境气象服务中关键性核心技术问题。试验主要内容包括开展城市冠层观测试验；开展雷雨大风高时空分辨率、高覆盖天气雷达观测试验，构建高分辨率、高（全）覆盖天气雷达探测格点数据库；开展综合观测资料的融合性分析与应用和资料同化分析试验，构建覆盖城市的高分辨率实时三维实况场；开展强降水观测试验，提升数值模式对台风强风强降水以及沿海地区强降水的预报能力；开展灰霾观测试验，提高珠三角灰霾与空气质量预报水平。
+2019年广州超大城市综合气象观测试验，将开展大气综合廓线站观测网建设和进行增强期观测试验。目前已做好了各项准备工作，已选取了广州市局和黄埔区局2个站点开展试验，龙门站作为对比站，已完成了5条垂直廓线观测设备的布设。下来将结合典型天气过程获取温湿、风、水凝物、气溶胶5条廓线数据，通过数据分析将揭示广州超大城市及城市群对气象环境，尤其是对大气边界层的影响；并通过建立观测预报的良性互动机制试验，探索未来观测与预报一体化的业务和业务流程。
